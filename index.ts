@@ -19,7 +19,9 @@ let main = async () => {
     const git: GitApi.GitApi = await connection.getGitApi();
     const repos = await git.getRepositories();
     for (const repo of repos) {
-        const localPath = `${reposFolder}/${repo.name}`
+        // Should not happen but typescript complains if we don't check
+        if (!repo.name) continue;
+        const localPath = path.join(reposFolder, repo.name)
         console.log(`Checking if folder ${localPath} exists`)
         const exists = fs.existsSync(localPath)
         if (exists) {
