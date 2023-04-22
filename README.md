@@ -7,6 +7,7 @@ Clone or update all Git repositories under an Azure project you specified to a l
 * Have NodeJS installed on your system. This project is developed and tested on NodeJS 16, but older and newer versions of NodeJS could also work.
 
 ## Setup
+* `git clone https://github.com/sunshineo/az-git-repos-puller` and then `cd az-git-repos-puller`
 * Make a copy of `.env.example` and rename to `.env`. Follow the comments in it to gather all the required variables:
   * An Azure org has its own name and it can have multiple projects each have its own name.
   * You need both the org name and the project name. We do not support clone all repos under all projects yet.
